@@ -2,39 +2,31 @@
 
 Building a virtual lab for cybersecurity and ethical hacking practice.
 
----
-
 ## 📌 Project Overview
 
-This project documents the setup of a cybersecurity testing environment using Oracle VirtualBox and Kali Linux as part of my cybersecurity internship at NetworkWalks.
+This project documents the setup and configuration of a cybersecurity lab using Oracle VirtualBox and Kali Linux on an Ubuntu host. It was completed as part of the NetworkWalks Cybersecurity Internship.
 
-The purpose is to create a controlled environment for learning network scanning, reconnaissance, vulnerability assessment, and authorized security testing.
+The lab provides a controlled environment for learning network reconnaissance, port scanning, vulnerability assessment, and authorized security testing.
 
-The lab will use a private virtual network so that additional virtual machines can be added for future practical exercises.
-
----
+The network is configured to support additional virtual machines for future practical exercises.
 
 ## 🎯 Objectives
 
-The main objectives of this project are to:
-
-- Set up Oracle VirtualBox on an Ubuntu host.
-- Add Kali Linux as a virtual machine.
+- Set up Oracle VirtualBox on Ubuntu Linux.
+- Import and configure Kali Linux as a virtual machine.
 - Create a NAT Network using the `10.0.0.0/24` subnet.
-- Configure Kali Linux with the required IP address.
-- Verify internet connectivity and DNS resolution.
-- Enable clipboard sharing and drag-and-drop.
-- Configure the host's `/downloads` folder as a shared folder.
-- Create a virtual machine snapshot.
-- Document the configuration and verification process.
-
----
+- Configure Kali Linux with the required static IP address.
+- Verify gateway connectivity, internet access, and DNS resolution.
+- Configure a shared folder between Ubuntu and Kali Linux.
+- Configure shared clipboard and drag-and-drop integration.
+- Create a baseline VM snapshot.
+- Document the configuration, verification, and troubleshooting process.
 
 ## 🛡️ Purpose of the Lab
 
 This laboratory is intended for cybersecurity education and authorized security testing.
 
-It will provide a controlled environment for activities such as:
+Planned activities include:
 
 - Network reconnaissance
 - Port scanning
@@ -44,19 +36,15 @@ It will provide a controlled environment for activities such as:
 - Security tool experimentation
 - Exploitation practice in authorized environments
 
-**Important:** Security testing must only be performed against systems you own or have explicit permission to test.
-
----
+**Ethical use:** Testing will only be performed against systems owned by me or for which I have explicit permission.
 
 ## 🏗️ Lab Architecture
 
-The Ubuntu host runs Oracle VirtualBox, which hosts the Kali Linux virtual machine.
+The Ubuntu host runs Oracle VirtualBox, which hosts Kali Linux.
 
-Kali Linux will connect to a VirtualBox NAT Network configured with the required private subnet.
+Kali connects to a VirtualBox NAT Network configured with the `10.0.0.0/24` subnet. The network provides outbound connectivity and can support communication between virtual machines attached to the same NAT Network.
 
-Additional virtual machines may be added to the same NAT Network for future lab exercises.
-
----
+Additional virtual machines may be added for future lab exercises.
 
 ## ⚙️ Lab Configuration
 
@@ -65,165 +53,218 @@ Additional virtual machines may be added to the same NAT Network for future lab 
 | Host Operating System | Ubuntu Linux |
 | Virtualization Platform | Oracle VirtualBox |
 | Attacking Machine | Kali Linux |
+| Kali VM Version | Kali Linux 2026.3 VirtualBox image |
 | Network Type | NAT Network |
-| Required Network Address | `10.0.0.0/24` |
-| Required Kali IP Address | `10.0.0.2/24` |
-| Default Gateway | To be verified |
-| DNS Server | To be verified |
-| Kali Internet Access | To be tested |
+| NAT Network Name | `NatNetwork` |
+| Network Subnet | `10.0.0.0/24` |
+| Kali IPv4 Address | `10.0.0.2/24` |
+| Default Gateway | `10.0.0.1` |
+| DNS Servers | `1.1.1.1`, `8.8.8.8` |
+| Shared Folder | Ubuntu Downloads directory |
+| Kali Shared Folder Mount | `/media/sf_Downloads` |
+| Baseline Snapshot | `Kali-Week1-Base` |
 
-*The configuration values above describe the assignment requirements. Actual settings will be updated after verification.*
+## 🪜 Lab Setup Procedure
 
----
+### Step 1: Prepare VirtualBox
 
-# 🪜 Lab Setup Procedure
+Oracle VirtualBox was used to run Kali Linux as a virtual machine on the Ubuntu host.
 
-## Step 1. Prepare VirtualBox
+The prebuilt Kali Linux VirtualBox image was imported into VirtualBox.
 
-Oracle VirtualBox is used to run Kali Linux in a virtual machine on the Ubuntu host.
+**Status:** Completed.
 
-The downloaded Kali virtual machine configuration was added to VirtualBox.
+### Step 2: Create the NAT Network
 
-**Status:** Kali VM added; startup and configuration verification pending.
+A VirtualBox NAT Network named `NatNetwork` was configured.
 
-## Step 2. Create the NAT Network
+| Setting | Value |
+|---|---|
+| Network Name | `NatNetwork` |
+| IPv4 Network | `10.0.0.0/24` |
+| Gateway | `10.0.0.1` |
+| DHCP | Enabled for dynamically assigned addresses |
 
-A dedicated NAT Network must be configured in VirtualBox.
+The DHCP address range was adjusted to start at `10.0.0.3`, keeping `10.0.0.2` available for Kali's required static address.
 
-Required configuration:
+**Status:** Completed.
 
-- Network type: NAT Network
-- IPv4 network: `10.0.0.0/24`
-- Kali IP address: `10.0.0.2/24`
+### Step 3: Configure the Kali Network Adapter
 
-The NAT Network allows virtual machines connected to the same network to communicate with each other while supporting outbound connectivity.
+The Kali virtual machine's network adapter was connected to the `NatNetwork` NAT Network.
 
-## Step 3. Configure the Kali VM Network Adapter
+The adapter was confirmed to be connected.
 
-The Kali virtual machine's network adapter must be connected to the configured NAT Network.
+**Status:** Completed.
 
-The network adapter settings will be verified in VirtualBox before testing connectivity.
+### Step 4: Configure the Kali Linux Network
 
-## Step 4. Configure the Kali Linux Network
+Kali Linux was configured with the required static IPv4 address.
 
-The Kali network interface must use the required IPv4 address:
+```text
+IP Address: 10.0.0.2/24
+Gateway:    10.0.0.1
+DNS:        1.1.1.1, 8.8.8.8
+```
 
-`10.0.0.2/24`
+NetworkManager was configured to use the static address instead of DHCP for the Kali network connection.
 
-The gateway, DNS configuration, and internet connectivity will also be checked.
+**Status:** Completed.
 
-## Step 5. Enable VM Integration
+### Step 5: Configure the Shared Folder
 
-The following features must be configured in the virtual machine settings:
+The Ubuntu host's Downloads directory was configured as a VirtualBox shared folder.
 
-- Shared clipboard
-- Drag-and-drop
-- Shared host folder
+The folder was mounted in Kali at:
 
-The host's `/downloads` folder must be configured as the shared folder specified by the assignment.
+```text
+/media/sf_Downloads
+```
 
-## Step 6. Create a VM Snapshot
+A test file was created from Kali:
 
-After completing and verifying the configuration, create a snapshot of the Kali virtual machine.
+```bash
+touch /media/sf_Downloads/kali_test.txt
+```
 
-Suggested snapshot name:
+The file was subsequently confirmed to be visible in the host's Downloads directory.
 
-`Clean Kali - Initial Lab Setup`
+This verified that file creation from the guest was reflected on the host.
 
-A snapshot provides a recovery point before future experiments.
+**Status:** Completed.
 
----
+### Step 6: Configure VM Integration
 
-# 🔎 Lab Verification
+The following VirtualBox integration settings were intended for configuration:
 
-The following commands can be used to verify the network configuration.
+- Shared Clipboard: Bidirectional
+- Drag-and-Drop: Bidirectional
 
-| Verification | Command | Expected Result |
+**Status:** Confirm that both features work before marking this step fully verified.
+
+### Step 7: Create a Baseline Snapshot
+
+A VirtualBox snapshot was created after configuring the network and shared folder.
+
+```text
+Snapshot Name: Kali-Week1-Base
+```
+
+The snapshot provides a recovery point before future lab experiments.
+
+**Status:** Completed.
+
+## 🔎 Lab Verification
+
+### Network Verification Commands
+
+The following commands were used to inspect the network configuration and test connectivity.
+
+| Verification | Command | Result |
 |---|---|---|
-| Check IP address | `ip -br addr` | Kali has the required IP address |
-| Check routing | `ip route` | Correct route and gateway |
-| Test gateway | `ping -c 4 10.0.0.1` | Successful replies, if the configured gateway is `10.0.0.1` |
-| Test internet connectivity | `ping -c 4 1.1.1.1` | Successful replies |
-| Test DNS resolution | `ping -c 4 google.com` | Domain resolves and connectivity succeeds |
+| Check IP address | `ip -br addr show eth0` | `10.0.0.2/24` confirmed |
+| Check routing | `ip route` | Default route via `10.0.0.1` confirmed |
+| Test gateway | `ping -c 3 10.0.0.1` | Successful; 0% packet loss |
+| Test internet connectivity | `ping -c 3 1.1.1.1` | Reported successful |
+| Test DNS resolution | `ping -c 3 google.com` | Reported successful |
+| Check shared folder mount | `ls -la /media/` | `/media/sf_Downloads` present |
+| Test shared folder write access | `touch /media/sf_Downloads/kali_test.txt` | File creation successful |
+| Verify host visibility | Check Ubuntu Downloads directory | Test file confirmed on host |
+| Verify snapshot | VirtualBox Snapshots view | `Kali-Week1-Base` present |
 
-The gateway address must be confirmed from the actual VirtualBox NAT Network configuration before using it as a definitive test.
+### Routing Configuration
 
-### Verification Results
+The `ip route` output confirmed the following routes:
 
-Results will be recorded after the tests have been performed.
+```text
+default via 10.0.0.1 dev eth0 proto static metric 100
+10.0.0.0/24 dev eth0 proto kernel scope link src 10.0.0.2 metric 100
+```
 
-- Kali IP address: Pending verification
-- Gateway connectivity: Pending verification
-- Internet connectivity: Pending verification
-- DNS resolution: Pending verification
-- Shared folder: Pending verification
-- Clipboard and drag-and-drop: Pending verification
-- VM snapshot: Pending verification
+This confirms that traffic to destinations outside the local subnet is routed through `10.0.0.1`.
 
----
+### Shared Folder Verification
 
-# 🐞 Problems Encountered & Solutions
+The shared folder appeared at `/media/sf_Downloads`.
 
-Any issues encountered during setup will be documented here, together with the troubleshooting steps and verified solution.
+The test file was created in Kali and confirmed to be visible on Ubuntu, demonstrating successful guest-to-host file sharing.
 
-No troubleshooting issues have been documented yet.
+## 🐞 Problems Encountered & Solutions
 
----
+### 1. Kali Initially Received the Wrong IP Address
 
-# 💡 What I Learned
+**Problem:** Kali initially received `10.0.0.3` through DHCP instead of the required `10.0.0.2`.
 
-This project is intended to develop practical knowledge of:
+**Investigation:** The VirtualBox DHCP server was configured to use `10.0.0.2` as its own address.
+
+**Solution:** The DHCP server address was changed to `10.0.0.254`, and the DHCP range was configured to start at `10.0.0.3`. Kali was then configured with the static address `10.0.0.2/24`.
+
+### 2. NetworkManager Rejected the Manual Configuration
+
+**Problem:** NetworkManager rejected the change to manual IPv4 configuration because no static address had been configured yet.
+
+**Solution:** The IPv4 address was configured first, followed by the gateway and DNS settings. The connection was then switched to manual IPv4 configuration and reactivated.
+
+### 3. Shared Folder Path Case Sensitivity
+
+**Problem:** Accessing `/media/sf_downloads` failed because the mounted folder used a capital `D`.
+
+**Solution:** The correct path, `/media/sf_Downloads`, was used.
+
+**Lesson learned:** Linux filesystem paths are case-sensitive.
+
+## 💡 What I Learned
 
 ### 1. Virtualization
 
-Understanding how virtual machines run a separate operating system on a host computer.
+Learned how to import and configure a virtual machine in VirtualBox.
 
 ### 2. VirtualBox Networking
 
-Learning how NAT Network configuration supports communication between virtual machines and outbound network connectivity.
+Practised configuring a NAT Network and understanding the relationship between the gateway, DHCP server, and guest virtual machines.
 
-### 3. IPv4 Addressing
+### 3. IPv4 Addressing and Routing
 
-Practising IP addressing, subnet masks, routing, and connectivity verification.
+Configured a static IPv4 address, subnet mask, default gateway, and DNS servers. Verified the resulting routing table.
 
-### 4. Lab Preparation
+### 4. Network Troubleshooting
 
-Preparing a controlled environment for future security testing and practical exercises.
+Used `nmcli`, `ip route`, `ifconfig`, and `ping` to investigate and resolve network configuration issues.
 
-### 5. Technical Documentation
+### 5. Shared Folders
 
-Recording configuration details, verification results, and troubleshooting steps in a reproducible format.
+Configured a host-to-guest shared folder and verified file creation from Kali.
 
----
+### 6. Snapshot Management
 
-# 🔐 Security & Ethical Use
+Created a baseline snapshot to provide a recovery point before subsequent lab exercises.
+
+### 7. Technical Documentation
+
+Recorded the lab configuration, verification results, and troubleshooting solutions for reproducibility.
+
+## 🔐 Security & Ethical Use
 
 This laboratory is intended for educational purposes and authorized cybersecurity testing only.
 
-All testing will be performed in environments where permission has been granted.
+Testing will only be performed against systems owned by me or for which permission has been granted.
 
----
-
-# 🔗 Tools & Resources
+## 🔗 Tools & Resources
 
 - [Oracle VirtualBox Downloads](https://www.virtualbox.org/wiki/Downloads)
 - [Kali Linux Downloads](https://www.kali.org/get-kali/)
 - [Kali Linux VirtualBox Documentation](https://www.kali.org/docs/virtualization/install-virtualbox-guest-vm/)
 
----
+## 👤 Author
 
-# 👤 Author
-
-**Name:** Your Name  
+**Name:** Mukund Ugale  
 **Program:** NetworkWalks Cybersecurity Internship  
 **Batch:** B084B  
 **Task:** WK1-PM1 — Cybersecurity Lab Setup
 
----
+## 📌 Project Information
 
-# 📌 Project Information
-
-- Week: 01
-- Project: VirtualBox and Kali Linux Lab Setup
-- Host OS: Ubuntu Linux
-- Repository: Cybersecurity Internship Portfolio
+- **Week:** 01
+- **Project:** VirtualBox and Kali Linux Lab Setup
+- **Host OS:** Ubuntu Linux
+- **Repository:** Cybersecurity Internship Portfolio
