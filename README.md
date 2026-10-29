@@ -137,7 +137,7 @@ My focus is on understanding the reasoning behind each step rather than simply c
 The repository is organized by internship week so that each assignment has its own documentation and supporting evidence.
 
 ```text
-NetworkWalks-B084B-Cybersecurity-Internship/
+NetworkWalks-B084-Cybersecurity-Internship/
 │
 ├── README.md
 │
