@@ -14,7 +14,7 @@ My goal is to strengthen my practical cybersecurity skills, develop a structured
 
 **Name:** Mukund Ugale  
 **Program:** NetworkWalks Cybersecurity Internship  
-**Batch:** B084B  
+**Batch:** B084  
 **Focus:** Cybersecurity, Ethical Hacking, Networking, and Security Testing
 
 I am developing practical skills through hands-on labs and structured technical assignments. I focus on understanding how tools work, interpreting results, troubleshooting problems, and documenting findings clearly.
@@ -205,7 +205,7 @@ As I progress through the internship, I intend to:
 |---|---|
 | Portfolio | Cybersecurity Internship Portfolio |
 | Organization | NetworkWalks |
-| Batch | B084B |
+| Batch | B084 |
 | Current Completed Project | Week 1 — Cybersecurity Lab Environment Setup |
 | Primary Lab OS | Kali Linux |
 | Host OS | Ubuntu Linux |
