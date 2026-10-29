@@ -2,7 +2,7 @@
 
 ### Hands-On Cybersecurity | Ethical Hacking | Network Security
 
-Welcome to my cybersecurity internship portfolio for the **NetworkWalks Cybersecurity Internship — Batch B084B**.
+Welcome to my cybersecurity internship portfolio for the **NetworkWalks Cybersecurity Internship — Batch B084**.
 
 This repository documents my hands-on learning journey through cybersecurity labs, technical assignments, network configuration, security testing, troubleshooting, and project documentation.
 
