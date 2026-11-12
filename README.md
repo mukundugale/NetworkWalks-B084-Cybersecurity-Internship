@@ -46,7 +46,7 @@ This repository will be updated as I progress through the internship.
 | Week | Project | Status | Documentation |
 |---|---|---|---|
 | Week 01 | Cybersecurity Lab Environment Setup | ✅ Completed | [View Week 1](./Network_Wallks-WK01-PM01-Cybersecurity-lab-setup) |
-| Week 02 | Upcoming Internship Assignment | ✅ Completed | [View Week 2](./Network_Wallks-WK02-PM01-Footprinting&NetworkScanning) |
+| Week 02 | Footprinting & Network Scanning | ✅ Completed | [View Week 2](./Network_Wallks-WK02-PM01-Footprinting&NetworkScanning) |
 | Week 03 | Upcoming Internship Assignment | ⏳ Planned | To be added |
 | Week 04 | Upcoming Internship Assignment | ⏳ Planned | To be added |
 
@@ -86,8 +86,7 @@ NetworkWalks-B084-Cybersecurity-Internship/
 │   ├── README.md
 │   └── screenshots/
 │   └── Report/
-│
-│
+
 
 ```
 
