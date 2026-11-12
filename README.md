@@ -86,6 +86,7 @@ NetworkWalks-B084-Cybersecurity-Internship/
 │   ├── README.md
 │   └── screenshots/
 │   └── Report/
+│   └── Letter-of-authorization/
 
 
 ```
