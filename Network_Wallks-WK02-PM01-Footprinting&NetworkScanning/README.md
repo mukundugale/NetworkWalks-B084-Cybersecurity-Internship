@@ -9,7 +9,7 @@ The primary objective was to understand how security professionals perform infor
 The project covered two major phases:
 
 1. **Footprinting & Reconnaissance** – Gathering publicly available information about a target domain.
-2. **Network Scanning & Discovery** – Using Zenmap to identify active hosts and analyze network exposure.
+2. **Network Scanning & Discovery** – Using Zenmap to identify active port/services and analyze information exposure.
 
 > All activities were performed within an authorized testing scope for educational purposes.
 
@@ -53,7 +53,7 @@ Activities included:
 - Identifying running services and service versions.
 - Collecting IP and MAC address information.
 - Analyzing network scan results.
-- Creating a network topology to understand the discovered environment.
+
 
 ## Key Observations
 
