@@ -149,7 +149,7 @@ As I progress through the internship, I intend to:
 | Portfolio | Cybersecurity Internship Portfolio |
 | Organization | NetworkWalks |
 | Batch | B084 |
-| Current Completed Project | Week 2 — Cybersecurity Lab Environment Setup |
+| Current Completed Project | Week 2 — Footprinting & Network Scanning |
 | Primary Lab OS | Kali Linux |
 | Host OS | Ubuntu Linux |
 
