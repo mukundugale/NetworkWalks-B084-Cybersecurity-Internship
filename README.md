@@ -46,75 +46,13 @@ This repository will be updated as I progress through the internship.
 | Week | Project | Status | Documentation |
 |---|---|---|---|
 | Week 01 | Cybersecurity Lab Environment Setup | ✅ Completed | [View Week 1](./Network_Wallks-WK01-PM01-Cybersecurity-lab-setup) |
-| Week 02 | Upcoming Internship Assignment | ⏳ Planned | To be added |
+| Week 02 | Upcoming Internship Assignment | ✅ Completed | [View Week 2](./Network_Wallks-WK02-PM01-Footprinting&NetworkScanning) |
 | Week 03 | Upcoming Internship Assignment | ⏳ Planned | To be added |
 | Week 04 | Upcoming Internship Assignment | ⏳ Planned | To be added |
 
 *Future project titles and statuses will be updated according to the assigned internship tasks.*
 
----
 
-## 🧪 Week 01 — Cybersecurity Lab Environment Setup
-
-**Objective:** Prepare a virtual environment for cybersecurity learning and authorized security testing.
-
-### Environment
-
-| Component | Configuration |
-|---|---|
-| Host Operating System | Ubuntu Linux |
-| Virtualization Platform | Oracle VirtualBox |
-| Security Testing Machine | Kali Linux |
-| Network Type | NAT Network |
-| Network Subnet | `10.0.0.0/24` |
-| Kali Static IP | `10.0.0.2/24` |
-| Default Gateway | `10.0.0.1` |
-| DNS Servers | `1.1.1.1`, `8.8.8.8` |
-| Shared Folder | Host Downloads directory |
-| Baseline Snapshot | `Kali-Week1-Base` |
-
-### Tasks Completed
-
-- Configured the VirtualBox NAT Network.
-- Connected the Kali Linux VM to the NAT Network.
-- Configured Kali Linux with the required static IPv4 address.
-- Verified the default gateway and network routing.
-- Tested gateway connectivity.
-- Reported successful internet and DNS connectivity tests.
-- Configured a shared folder between the Ubuntu host and Kali Linux.
-- Created a test file in Kali and verified that it appeared on the Ubuntu host.
-- Created the `Kali-Week1-Base` VM snapshot.
-
-### Key Learning Outcomes
-
-- Virtual machine networking and NAT Network configuration.
-- Static IPv4 addressing and subnet masks.
-- Default gateways, routing, and DNS configuration.
-- Linux network troubleshooting using `nmcli`, `ip`, and `ping`.
-- VirtualBox shared folders and snapshot management.
-- Technical documentation and verification.
-
-**Detailed documentation:** [Week 1 Project](./Network_Wallks-WK01-PM01-Cybersecurity-lab-setup)
-
----
-
-## 🛠️ Technologies and Tools
-
-Tools used or planned for exploration as part of the internship include:
-
-| Category | Tools and Technologies |
-|---|---|
-| Operating Systems | Kali Linux, Ubuntu Linux |
-| Virtualization | Oracle VirtualBox |
-| Networking | IPv4, CIDR, NAT Network, DNS, routing |
-| Network Analysis | Nmap and related network utilities |
-| Linux Administration | Bash, `ip`, `nmcli`, `ping` |
-| Web Security | Tools and techniques introduced in assigned labs |
-| Documentation | Markdown, Git, GitHub |
-
-*This list includes tools already used and tools intended for future learning. It does not imply that I have mastered every tool listed.*
-
----
 
 ## 📈 Learning Approach
 
@@ -144,6 +82,11 @@ NetworkWalks-B084-Cybersecurity-Internship/
 ├── Week-01/
 │   ├── README.md
 │   └── screenshots/
+├── Week-02/
+│   ├── README.md
+│   └── screenshots/
+│   └── Report/
+│
 │
 
 ```
@@ -206,7 +149,7 @@ As I progress through the internship, I intend to:
 | Portfolio | Cybersecurity Internship Portfolio |
 | Organization | NetworkWalks |
 | Batch | B084 |
-| Current Completed Project | Week 1 — Cybersecurity Lab Environment Setup |
+| Current Completed Project | Week 2 — Cybersecurity Lab Environment Setup |
 | Primary Lab OS | Kali Linux |
 | Host OS | Ubuntu Linux |
 
