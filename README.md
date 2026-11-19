@@ -47,7 +47,7 @@ This repository will be updated as I progress through the internship.
 |---|---|---|---|
 | Week 01 | Cybersecurity Lab Environment Setup | ✅ Completed | [View Week 1](./Network_Wallks-WK01-PM01-Cybersecurity-lab-setup) |
 | Week 02 | Footprinting & Network Scanning | ✅ Completed | [View Week 2](./Network_Wallks-WK02-PM01-Footprinting&NetworkScanning) |
-| Week 03 | Upcoming Internship Assignment | ⏳ Planned | To be added |
+| Week 03 | Upcoming Internship Assignment | ✅ Completed | [View Week 3](./Network_Wallks-WK03-PM01&PM02-Password-Cracking-JohnTheRipper&NetworkwalksTools) |
 | Week 04 | Upcoming Internship Assignment | ⏳ Planned | To be added |
 
 *Future project titles and statuses will be updated according to the assigned internship tasks.*
@@ -87,6 +87,11 @@ NetworkWalks-B084-Cybersecurity-Internship/
 │   └── screenshots/
 │   └── Report/
 │   └── Letter-of-authorization/
+├── Week-03/
+│   ├── README.md
+│   └── screenshots/
+
+
 
 
 ```
@@ -149,7 +154,7 @@ As I progress through the internship, I intend to:
 | Portfolio | Cybersecurity Internship Portfolio |
 | Organization | NetworkWalks |
 | Batch | B084 |
-| Current Completed Project | Week 2 — Footprinting & Network Scanning |
+| Current Completed Project | Week 3 — Password Cracking |
 | Primary Lab OS | Kali Linux |
 | Host OS | Ubuntu Linux |
 
