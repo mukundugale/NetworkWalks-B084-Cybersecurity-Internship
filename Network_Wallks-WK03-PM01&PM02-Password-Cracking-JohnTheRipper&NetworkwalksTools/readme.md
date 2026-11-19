@@ -34,7 +34,6 @@ Successfully completed the initial flag-capture exercise on NetworkWalks.
 **Captured Flag:**
 `nw{cybersecurity_flag_captured_2608}`
 
-![First Flag](screenshots/01-first-flag.png)
 
 ### 2. Persistence Flag Capture
 
@@ -43,7 +42,7 @@ Continued the lab and successfully captured another flag.
 **Captured Flag:**
 `nw{networkwalks_persistence_itr_270521}`
 
-![Persistence Flag](screenshots/02-persistence-flag.png)
+
 
 ### 3. PDF Hash Extraction
 
@@ -59,7 +58,7 @@ The extracted hash contained information about the PDF encryption configuration.
 - Revision: R4
 - Key Length: 128-bit
 
-![PDF Hash Extraction](screenshots/03-pdf-hash-extraction.png)
+
 
 ### 4. Password Cracking Using John the Ripper
 
@@ -130,10 +129,10 @@ Successfully completed the NetworkWalks PDF password-cracking exercise and captu
 
 This exercise provided practical exposure to password security assessment, hash extraction, and dictionary-based password recovery using industry-standard security tools.
 
-**Platform:** NetworkWalks Academy  
-**Environment:** Kali Linux  
-**Category:** Password Security / Cryptography  
-**Status:** Completed
+Author: Mukund Ugale
+Program: Cybersecurity & Ethical Hacking Internship
+Organization: Networkwalks
+Modules: W3-PM1 (JohnTheRipper) | W3-PM2 (Networkwalks-tool)
 
 ---
 
